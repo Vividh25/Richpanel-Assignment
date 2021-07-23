@@ -1,0 +1,34 @@
+/* .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 150px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding-top: 40px;
+    background-color: #4267B2;
+}
+
+.sidebar > button {
+    font-size: large;
+    font-weight: lighter;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #4267B2;
+    border: 1px solid #4267B2;
+}
+
+.sidebar > img {
+    margin-top: 60vh;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}

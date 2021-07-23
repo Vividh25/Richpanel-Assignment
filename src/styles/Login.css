@@ -1,23 +1,21 @@
 * {
-    background-color: #0A1931;
+    background-color: white;
 }
 
 h1, h2 {
-    color: white;
+    color: black;
     font-weight: lighter;
 }
 
 .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    text-align: center;
 }
 
 .fb-login-btn {
+    color: white;
     font-size: medium;
     font-weight: light;
-    background-color: white;
+    background-color: #4267B2;
     padding: 20px;
     border: 3px solid #ffffff;
     border-radius: 25px;

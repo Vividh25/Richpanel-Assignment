@@ -1,7 +1,7 @@
-import { render } from '@testing-library/react';
 import React, { useState } from 'react';
 import FacebookLogin from 'react-facebook-login';
 import '../styles/Login.css';
+import AgentScreen from './AgentScreen';
 
 function Login() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -9,10 +9,17 @@ function Login() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [picture, setPicture] = useState('');
+  const [accessToken, setAccessToken] = useState('');
   let fbContent;
 
   const responseFacebook = (response) => {
     console.log(response);
+    setAccessToken(response.accessToken);
+    setEmail(response.email);
+    setIsLoggedIn(true);
+    setName(response.name);
+    setUserID(response.id);
+    setPicture(response.picture.data.url);
   };
 
   const handleLogin = () => {
@@ -20,12 +27,19 @@ function Login() {
   };
 
   if (isLoggedIn) {
-    fbContent = null;
+    return (
+      <AgentScreen
+        picture={picture}
+        name={name}
+        accessToken={accessToken}
+        userID={userID}
+      />
+    );
   } else {
     fbContent = (
       <FacebookLogin
         appId='352938649682255'
-        autoLoad={true}
+        autoLoad={false}
         fields='name,email,picture'
         onClick={handleLogin}
         callback={responseFacebook}
